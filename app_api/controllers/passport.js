@@ -12,6 +12,10 @@ passport.use(new LocalStrategy({
 {
   fs.readFile(DATA_FILE, 'utf8', (err, data) => {
     const accounts = JSON.parse(data);
+
+    console.log('----- passport -----');
+    console.log(accounts);
+
     if (accounts[username] != undefined) {
       return done(null, accounts[username]);
     } else {

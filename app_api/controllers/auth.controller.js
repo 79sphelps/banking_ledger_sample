@@ -60,6 +60,8 @@ module.exports.login = function(req, res) {
     return;
   }
 
+  console.log('--- login ---');
+
   passport.authenticate("local", (err, user, info) => {
     if (err) return res.status(404).json(err);
 
@@ -77,6 +79,9 @@ module.exports.login = function(req, res) {
       );
 
       res.status(200);
+
+      console.log('--- login returning token ---');
+
       res.json({ token: token });
     } else {
       res.status(401).json(info);

@@ -1,0 +1,156 @@
+<!-- The Modal - Withdrawl -->
+<div class="modal fade" id="withdrawl">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Withdrawl</h4>
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form [formGroup]="withdrawlForm" (ngSubmit)="onWithdrawlSubmit()">
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input
+              id="amount"
+              type="text"
+              class="form-control"
+              formControlName="withdrawlAmount"
+            />
+          </div>
+
+          <!-- Submit -->
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- The Modal - Deposit -->
+<div class="modal fade" id="deposit">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Deposit</h4>
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form [formGroup]="depositForm" (ngSubmit)="onDepositSubmit()">
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input
+              id="amount"
+              type="text"
+              class="form-control"
+              formControlName="depositAmount"
+            />
+          </div>
+
+          <!-- Submit -->
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="row" style="margin: 10px;">
+      <h2>Welcome, {{ details?.username }}</h2>
+    </div>
+
+    <ul>
+      <li style="margin-bottom: 10px;">
+        <button
+          class="btn btn-primary"
+          data-toggle="modal"
+          data-target="#withdrawl"
+        >
+          Withdrawl
+        </button>
+      </li>
+      <li>
+        <button
+          class="btn btn-primary"
+          data-toggle="modal"
+          data-target="#deposit"
+        >
+          Deposit
+        </button>
+      </li>
+    </ul>
+
+    <!--
+    <div class="card" style="margin: 10px;">
+      <div class="card-body">
+        <h3>User Account</h3>
+        {{ userAccount | json }}
+      </div>
+    </div>
+    -->
+
+    <div class="card" style="margin: 10px;" *ngIf="userAccount">
+      <div class="card-body">
+        <h2><b>Account:</b> {{ userAccount.account }}</h2>
+        <h3><b>Name:</b> {{ userAccount.username }}</h3>
+        <h3>
+            <b>Balance:</b> <span [ngStyle]="{'color':userAccount.balance > 0 ? 'green' : 'red' }">
+              {{ userAccount.balance | currency: "USD":"symbol-narrow" }}
+            </span>
+        </h3>
+        <h3><b>Transactions:</b></h3>
+
+        <Table
+          *ngIf="userAccount && userAccount.transactions"
+          class="table table-hover"
+        >
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let transaction of userAccount.transactions">
+              <td>{{ transaction.date }}</td>
+              <td>{{ transaction.type }}</td>
+              <td>
+                {{ transaction.amount | currency: "USD":"symbol-narrow" }}
+              </td>
+            </tr>
+          </tbody>
+        </Table>
+      </div>
+    </div>
+  </div>
+</section>

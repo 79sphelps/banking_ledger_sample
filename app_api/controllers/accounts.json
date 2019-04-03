@@ -1,0 +1,52 @@
+{
+    "test": {
+        "_id": "5ca3a9fef95e060b10291930",
+        "account": "1",
+        "username": "test",
+        "hash": "c6e18e589f82600b2e5b9e0d710a4142789f7148a8f3256962088b794a6b4798649fd86b89dd231914592852b398ff5356f6b5d17c8ddf869b573cfd68fde65c",
+        "salt": "e674b170c16aa70d98d84977eedacae5",
+        "balance": 1000,
+        "transactions": [
+            {
+                "date": "1-1-2019",
+                "type": "withdrawl",
+                "amount": 500
+            },
+            {
+                "type": "withdrawl",
+                "date": "2019-04-03T16:07:19.309Z",
+                "amount": 235
+            },
+            {
+                "type": "withdrawl",
+                "date": "2019-04-03T17:57:59.991Z",
+                "amount": 6000
+            },
+            {
+                "type": "deposit",
+                "date": "2019-04-03T17:58:09.319Z",
+                "amount": 2000
+            }
+        ]
+    },
+    "sphelps": {
+        "_id": "5ca3a9fef95e060b10291930",
+        "account": 0,
+        "username": "sphelps",
+        "hash": "58848277aeaddc1b0aeb349c824c6d42",
+        "salt": "7c3f927228cf88ef56cf8a2d0a2328490b51221c7a053922162d3cb07f74397986d683e47867ca067d5d0ff58920e321af170cb93740b70a9cb4a47457740c36",
+        "balance": 4000,
+        "transactions": [
+            {
+                "type": "deposit",
+                "date": "2019-04-03T16:22:03.747Z",
+                "amount": 5000
+            },
+            {
+                "type": "withdrawl",
+                "date": "2019-04-03T16:22:13.639Z",
+                "amount": 1000
+            }
+        ]
+    }
+}

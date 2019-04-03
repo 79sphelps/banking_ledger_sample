@@ -35,6 +35,19 @@ app.use(passport.initialize());
 app.use('/api', accountsRoutes);
 app.use('/api', userRoutes);
 
+// Set static path to Angular app in dist
+// Don't run in dev
+if (process.env.NODE_ENV !== "dev") {
+    //app.use("/", express.static(path.join("/dist/all-about-hair")));
+    app.use("/", express.static(path.join(__dirname, "/dist")));
+}
+
+if (process.env.NODE_ENV !== "dev") {
+    app.get("*", function (req, res) {
+        res.sendFile(path.join(__dirname, "/dist/index.html"));
+    });
+}
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

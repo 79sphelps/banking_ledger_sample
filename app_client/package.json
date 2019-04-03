@@ -12,6 +12,8 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "~1.7.4",
+    "@angular/compiler-cli": "^5.2.0",
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
@@ -24,7 +26,13 @@
     "cookie-parser": "^1.4.4",
     "core-js": "^2.4.1",
     "rxjs": "^5.5.6",
-    "zone.js": "^0.8.19"
+    "zone.js": "^0.8.19",
+    "typescript": "~2.5.3"
+  },
+  "heroku-postbuild": "ng build --prod",
+  "engines": {
+    "node": "~8.9.4",
+    "npm": "~5.6.0"
   },
   "devDependencies": {
     "@angular/cli": "~1.7.4",

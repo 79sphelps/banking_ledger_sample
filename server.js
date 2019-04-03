@@ -9,6 +9,7 @@ const app = express();
 
 require('./app_api/controllers/passport');
 
+/*
 //var HOST_IP = "192.168.0.20";
 app.use(function(req, res, next) {
     //res.header("Access-Control-Allow-Origin", "http://" + HOST_IP + ":4200");
@@ -17,6 +18,7 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
     next();
   });
+*/
 
 const accountsRoutes = require('./app_api/routes/accounts.server.routes');
 const userRoutes = require('./app_api/routes/user.routes');

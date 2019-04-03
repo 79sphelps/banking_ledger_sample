@@ -5,7 +5,7 @@
         "username": "test",
         "hash": "c6e18e589f82600b2e5b9e0d710a4142789f7148a8f3256962088b794a6b4798649fd86b89dd231914592852b398ff5356f6b5d17c8ddf869b573cfd68fde65c",
         "salt": "e674b170c16aa70d98d84977eedacae5",
-        "balance": 1000,
+        "balance": 1500,
         "transactions": [
             {
                 "date": "1-1-2019",
@@ -26,6 +26,16 @@
                 "type": "deposit",
                 "date": "2019-04-03T17:58:09.319Z",
                 "amount": 2000
+            },
+            {
+                "type": "deposit",
+                "date": "2019-04-03T22:55:40.356Z",
+                "amount": 1000
+            },
+            {
+                "type": "withdrawl",
+                "date": "2019-04-03T22:55:47.946Z",
+                "amount": 500
             }
         ]
     },

@@ -44,8 +44,8 @@
   },
   "heroku-postbuild": "ng build --prod",
   "engines": {
-    "node": "~8.9.4",
-    "npm": "~5.6.0"
+    "node": "~10.13.0",
+    "npm": "~6.4.1"
   },
   "devDependencies": {
     "@angular/cli": "~1.7.4",

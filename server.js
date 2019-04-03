@@ -4,7 +4,7 @@ const cors = require('cors');
 const passport = require('passport');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-
+const path = require('path');
 const app = express();
 
 require('./app_api/controllers/passport');

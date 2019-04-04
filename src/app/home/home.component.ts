@@ -20,8 +20,9 @@ export class HomeComponent implements OnInit {
   withdrawlAmount: FormControl;
   depositAmount: FormControl;
 
+  // Declare variables to hold account data
   details: UserDetails;
-  userAccounts: Array<Account> = [];
+  userAccounts: Array<Account> = [];  // all accounts
   userAccount: Account;
 
   constructor(
@@ -29,23 +30,6 @@ export class HomeComponent implements OnInit {
     private _router: Router,
     private _acctService: AccountsService
   ) {}
-
-  createFormControls() {
-    this.withdrawlAmount = new FormControl('');
-    this.depositAmount = new FormControl('');
-  }
-
-  createWithdrawlForm() {
-    this.withdrawlForm = new FormGroup({
-      withdrawlAmount: new FormControl()
-    });
-  }
-
-  createDepositForm() {
-    this.depositForm = new FormGroup({
-      depositAmount: new FormControl()
-    });
-  }
 
   ngOnInit() {
     this._authService.profile().subscribe(
@@ -64,6 +48,29 @@ export class HomeComponent implements OnInit {
     this._router.navigateByUrl('/home');
   }
 
+  // ------------------------------------------
+  // Form building methods
+  // ------------------------------------------
+  createFormControls() {
+    this.withdrawlAmount = new FormControl('');
+    this.depositAmount = new FormControl('');
+  }
+
+  createWithdrawlForm() {
+    this.withdrawlForm = new FormGroup({
+      withdrawlAmount: new FormControl()
+    });
+  }
+
+  createDepositForm() {
+    this.depositForm = new FormGroup({
+      depositAmount: new FormControl()
+    });
+  }
+
+  // ------------------------------------------
+  // Transaction methods
+  // ------------------------------------------
   onWithdrawlSubmit() {
     this._acctService
       .performWithdrawl(
@@ -90,6 +97,9 @@ export class HomeComponent implements OnInit {
     this.depositForm.reset();
   }
 
+  // ------------------------------------------
+  // Account information methods
+  // ------------------------------------------
   getAccounts() {
     this._acctService
       .getAccounts()

@@ -84,8 +84,11 @@
 
 <section>
   <div class="container">
-    <div class="row" style="margin: 10px;">
-      <h2>Welcome, {{ details?.username }}</h2>
+    <div class="text-center" style="margin: 10px;">
+      <h2>Welcome, <span class="text-primary">{{ details?.username }}</span>!</h2>
+      <p>
+        You may perform account changes as given below.
+      </p>
     </div>
 
     <ul>
@@ -120,8 +123,8 @@
 
     <div class="card" style="margin: 10px;" *ngIf="userAccount">
       <div class="card-body">
-        <h2><b>Account:</b> {{ userAccount.account }}</h2>
-        <h3><b>Name:</b> {{ userAccount.username }}</h3>
+        <h3><b>Account #:</b> {{ userAccount.account }}</h3>
+        <h3><b>Account Holder:</b> <span class="text-primary">{{ userAccount.username }}</span></h3>
         <h3>
             <b>Balance:</b> <span [ngStyle]="{'color':userAccount.balance > 0 ? 'green' : 'red' }">
               {{ userAccount.balance | currency: "USD":"symbol-narrow" }}

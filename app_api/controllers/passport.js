@@ -1,10 +1,13 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-
 const fs = require('fs');
 const path = require('path');
 
 const DATA_FILE = path.join(__dirname, 'accounts.json');
+
+// ------------------------------------------------------
+// Passport strategy usage and serialize/deserialization
+// ------------------------------------------------------
 
 passport.use(new LocalStrategy({
   usernameField: 'username'

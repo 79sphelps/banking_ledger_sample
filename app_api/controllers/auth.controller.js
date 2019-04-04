@@ -11,6 +11,10 @@ const sendJSONResponse = function(res, status, content) {
   res.json(content);
 };
 
+// ------------------------------------------------------
+// Registration/login functions
+// ------------------------------------------------------
+
 module.exports.register = async (req, res) => {
   if (!req.body.username || !req.body.password) {
     sendJSONResponse(res, 400, { message: "All fields required" });

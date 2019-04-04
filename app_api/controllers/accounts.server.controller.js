@@ -3,6 +3,10 @@ const path = require("path");
 
 const DATA_FILE = path.join(__dirname, "accounts.json");
 
+// ------------------------------------------------------
+// Account information functions
+// ------------------------------------------------------
+
 module.exports.getAccounts = async (req, res) => {
   fs.readFile(DATA_FILE, (err, data) => {
     res.setHeader("Cache-Control", "no-cache");
@@ -23,7 +27,9 @@ module.exports.getAccount = async (req, res) => {
   });
 };
 
-// createTransaction
+// ------------------------------------------------------
+// Transaction functions
+// ------------------------------------------------------
 
 module.exports.performWithdrawl = async (req, res) => {
   fs.readFile(DATA_FILE, (err, data) => {

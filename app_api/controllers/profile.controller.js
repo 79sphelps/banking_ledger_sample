@@ -3,6 +3,10 @@ const path = require("path");
 
 const DATA_FILE = path.join(__dirname, "accounts.json");
 
+// ------------------------------------------------------
+// User profile information functions
+// ------------------------------------------------------
+
 module.exports.profileRead = function(req, res) {
   if (!req.payload.username) {
     res.status(401).json({

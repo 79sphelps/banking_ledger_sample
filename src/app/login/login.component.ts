@@ -8,7 +8,7 @@ import { AuthenticationService, TokenPayload } from '../services/authentication.
   styleUrls: []
 })
 export class LoginComponent {
-  unauthorized: boolean;
+  unauthorized: boolean;    // used for error display during login
 
   credentials: TokenPayload = {
     username: '',

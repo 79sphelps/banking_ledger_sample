@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService, UserDetails } from '../services/authentication.service';
-
-import { Inject, ViewChild, ElementRef } from '@angular/core';
-// import { DOCUMENT} from '@angular/common';
+import { UserDetails } from '../services/authentication.service';
+import { ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -14,19 +12,13 @@ export class NavbarComponent implements OnInit {
   @ViewChild('menu') menu: ElementRef;
   details: UserDetails;
 
-  constructor(private _authService: AuthenticationService, private _router: Router) {
+  constructor(private _router: Router) {
     if (!localStorage.getItem('mean-token')) {
       this._router.navigate(['/']);
     }
   }
 
   ngOnInit() {
-    /*
-    this._authService.profile()
-    .subscribe(user => {
-      this.details = user;
-    }, (err) => console.error(err));
-    */
   }
 
   goToProfile() {

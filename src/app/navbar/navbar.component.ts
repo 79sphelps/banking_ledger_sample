@@ -8,7 +8,7 @@ import { Inject, ViewChild, ElementRef } from '@angular/core';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: []
 })
 export class NavbarComponent implements OnInit {
   @ViewChild('menu') menu: ElementRef;

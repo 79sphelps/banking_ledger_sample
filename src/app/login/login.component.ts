@@ -5,7 +5,7 @@ import { AuthenticationService, TokenPayload } from '../services/authentication.
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: []
 })
 export class LoginComponent {
   unauthorized: boolean;

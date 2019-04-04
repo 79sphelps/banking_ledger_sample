@@ -15,7 +15,7 @@ import { ProfileComponent } from './profile/profile.component';
 
 import { AuthenticationService } from './services/authentication.service';
 import { AuthGuardService } from './services/auth-guard.service';
-import { AccountsService } from './accounts.service';
+import { AccountsService } from './services/accounts.service';
 
 import { ROUTES } from './app.routing';
 

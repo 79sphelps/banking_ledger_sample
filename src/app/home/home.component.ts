@@ -1,17 +1,17 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import {
   AuthenticationService,
   UserDetails
-} from "../services/authentication.service";
-import { Router } from "@angular/router";
-import { AccountsService } from "../accounts.service";
-import { Account } from "../models/account.model";
-import { FormGroup, FormControl } from "@angular/forms";
+} from '../services/authentication.service';
+import { Router } from '@angular/router';
+import { AccountsService } from '../services/accounts.service';
+import { Account } from '../models/account.model';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.css"]
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
   // FormBuilder form
@@ -31,8 +31,8 @@ export class HomeComponent implements OnInit {
   ) {}
 
   createFormControls() {
-    this.withdrawlAmount = new FormControl("");
-    this.depositAmount = new FormControl("");
+    this.withdrawlAmount = new FormControl('');
+    this.depositAmount = new FormControl('');
   }
 
   createWithdrawlForm() {
@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit {
   }
 
   goToHome() {
-    this._router.navigateByUrl("/home");
+    this._router.navigateByUrl('/home');
   }
 
   onWithdrawlSubmit() {

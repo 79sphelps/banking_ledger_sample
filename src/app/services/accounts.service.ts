@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Account } from '../app/models/account.model';
+import { Account } from '../models/account.model';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 

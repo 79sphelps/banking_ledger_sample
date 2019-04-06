@@ -128,7 +128,7 @@
         <h3><b>Account #:</b> {{ userAccount.account }}</h3>
         <h3><b>Account Holder:</b> <span class="text-primary">{{ userAccount.username }}</span></h3>
         <h3>
-            <b>Balance:</b> <span [ngStyle]="{'color':userAccount.balance > 0 ? 'green' : 'red' }">
+            <b>Balance:</b> <span [ngStyle]="{'color':userAccount.balance >= 0 ? 'green' : 'red' }">
               {{ userAccount.balance | currency: "USD":"symbol-narrow" }}
             </span>
         </h3>
